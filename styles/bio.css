@@ -1,3 +1,3 @@
-h1{
-    color: blue;
-}
+*, *::before, *::after {
+  box-sizing: border-box;
+}/*# sourceMappingURL=bio.css.map */
