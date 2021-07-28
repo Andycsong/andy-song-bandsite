@@ -1,0 +1,42 @@
+@use 'mixins' as *;
+
+.header{
+    background-color: black;
+    background-size: cover;
+    display: flex;
+    color: white;
+
+    @include mobile {
+        flex-direction: column;
+        align-items: center;
+        
+    }
+
+    @include tablet{
+        flex-direction: row;
+    }
+
+    @include desktop{
+        flex-direction: row;
+    
+    }
+
+
+    &__title{
+        font-weight: 400 ;
+        font-family: 'AvenirNextLTPro';
+        padding-left: 10rem; 
+    }
+
+
+    &-list-container{
+        display: flex;
+        
+    }
+
+    &__list{
+        list-style: none;
+        padding-right: 1rem;
+    }
+}
+
