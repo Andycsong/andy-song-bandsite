@@ -1,14 +1,16 @@
 @use './partials/fonts' as *; 
-@use './partials/header';
+@use './partials/header' as*; 
+@use './partials/footer' as*;
+@use'./partials/hero' as*;
 
 *, *::before, *::after {
     box-sizing: border-box;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'AvenirNextLTpro' ;
+html {
+    margin: 0px;
+    padding: 0px;
+    font-family:'AvenirNextLTPro';
+    
   }
 
-  

@@ -1,0 +1,46 @@
+@use 'mixins' as *;
+
+.footer {
+    background-color: #323232;
+    background-size: cover;
+    color: white;
+    display: flex;
+
+    @include mobile {
+        flex-direction: column;
+    }
+
+    @include tablet {
+
+    }
+
+    @include desktop {
+
+    }
+    &-container{
+        display: flex;
+        @include mobile{
+            flex-direction: column;
+        }
+    }
+
+    &__title{
+        
+    }
+
+    &-social-icons{
+    }
+
+    &-container__contact{
+
+    }
+
+        
+    &__logo{
+        font-weight: 400;
+        margin-bottom: 0;
+    }
+
+}
+
+

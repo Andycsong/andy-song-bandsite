@@ -1,42 +1,71 @@
 @use 'mixins' as *;
 
 .header{
-    background-color: black;
+    background-color: #323232;
     background-size: cover;
+    width: 100%;
     display: flex;
     color: white;
+    z-index: 2;
 
     @include mobile {
         flex-direction: column;
-        align-items: center;
+        
         
     }
 
     @include tablet{
         flex-direction: row;
+        justify-content: flex-start;
+        padding-left: 36px;
+        position:absolute;
     }
 
     @include desktop{
         flex-direction: row;
-    
+        position:absolute;
     }
 
 
     &__title{
-        font-weight: 400 ;
+        font-weight: 400;
         font-family: 'AvenirNextLTPro';
-        padding-left: 10rem; 
+        font-size: 20px;
+        
+
+        @include mobile {
+        text-align: center;   
+        }
+
+        @include tablet {
+            align-items: center;
+            padding-right: 36px;
+        }
     }
 
 
     &-list-container{
         display: flex;
+        padding-inline-start: 0px;
+        margin: 0;
+        @include mobile {
+            justify-content:space-around;
+            align-items: center;
+        }
         
     }
 
     &__list{
         list-style: none;
-        padding-right: 1rem;
+        @include tablet {
+            padding-right: 24px ;
+            
+        }
+        @include desktop{
+            padding-right: 24px;
+        }
     }
+ 
+    
 }
 
