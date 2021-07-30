@@ -5,10 +5,8 @@
     background-size: cover;
     color: white;
     display: flex;
-
-    @include mobile {
-        flex-direction: column;
-    }
+    flex-direction: column;
+    
 
     @include tablet {
 
@@ -18,29 +16,46 @@
 
     }
     &-container{
-        display: flex;
-        @include mobile{
-            flex-direction: column;
-        }
-    }
+        
+        
+    }   
 
     &__title{
-        
+        font-size: 24px;
+        font-weight: 600;
     }
 
     &-social-icons{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    &__icons{
+        margin-right: 2rem;
+        margin-bottom: 1rem;
     }
 
     &-container__contact{
+        font-size: 13px;
 
+        @include tablet {
+            font-size: 14px;
+        }
+        
     }
 
         
     &__logo{
         font-weight: 400;
+        font-size: 24px;
         margin-bottom: 0;
     }
 
+    &__copyright{
+        font-size: 13px;
+    }
 }
 
 

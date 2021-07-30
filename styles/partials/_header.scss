@@ -6,40 +6,37 @@
     width: 100%;
     display: flex;
     color: white;
-    z-index: 2;
-
-    @include mobile {
-        flex-direction: column;
-        
-        
-    }
+    // position: absolute;
+    // z-index: 2;
+    flex-direction: column;
 
     @include tablet{
         flex-direction: row;
         justify-content: flex-start;
-        padding-left: 36px;
-        position:absolute;
+        padding-left: 32px;
+        height: 15vh;
     }
 
     @include desktop{
         flex-direction: row;
-        position:absolute;
+        
     }
 
 
     &__title{
         font-weight: 400;
         font-family: 'AvenirNextLTPro';
-        font-size: 20px;
-        
+        font-size: 24px;
+        display: flex;
+        justify-content: center; 
 
-        @include mobile {
-        text-align: center;   
-        }
 
         @include tablet {
             align-items: center;
-            padding-right: 36px;
+            padding-right: 60px;
+        }
+        @include desktop{
+            align-items: center;
         }
     }
 
@@ -48,9 +45,13 @@
         display: flex;
         padding-inline-start: 0px;
         margin: 0;
-        @include mobile {
-            justify-content:space-around;
-            align-items: center;
+        margin-bottom: 1rem
+        ;
+        justify-content:space-around;
+        align-items: center;
+        
+        @include tablet {
+            
         }
         
     }
@@ -58,11 +59,12 @@
     &__list{
         list-style: none;
         @include tablet {
-            padding-right: 24px ;
+            // padding-right: 50px ;
+            font-size: 14px;
             
         }
         @include desktop{
-            padding-right: 24px;
+            padding-right: 48px;
         }
     }
  

@@ -19,65 +19,58 @@
   width: 100%;
   display: flex;
   color: white;
-  z-index: 2;
-}
-@media screen and (min-width: 320px) {
-  .header {
-    flex-direction: column;
-  }
+  flex-direction: column;
 }
 @media screen and (min-width: 768px) {
   .header {
     flex-direction: row;
     justify-content: flex-start;
-    padding-left: 36px;
-    position: absolute;
+    padding-left: 32px;
+    height: 15vh;
   }
 }
 @media screen and (min-width: 1280px) {
   .header {
     flex-direction: row;
-    position: absolute;
   }
 }
 .header__title {
   font-weight: 400;
   font-family: "AvenirNextLTPro";
-  font-size: 20px;
-}
-@media screen and (min-width: 320px) {
-  .header__title {
-    text-align: center;
-  }
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
 }
 @media screen and (min-width: 768px) {
   .header__title {
     align-items: center;
-    padding-right: 36px;
+    padding-right: 60px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .header__title {
+    align-items: center;
   }
 }
 .header-list-container {
   display: flex;
   padding-inline-start: 0px;
   margin: 0;
-}
-@media screen and (min-width: 320px) {
-  .header-list-container {
-    justify-content: space-around;
-    align-items: center;
-  }
+  margin-bottom: 1rem;
+  justify-content: space-around;
+  align-items: center;
 }
 .header__list {
   list-style: none;
 }
 @media screen and (min-width: 768px) {
   .header__list {
-    padding-right: 24px;
+    font-size: 14px;
   }
 }
 @media screen and (min-width: 1280px) {
   .header__list {
-    padding-right: 24px;
+    padding-right: 48px;
   }
 }
 
@@ -86,63 +79,64 @@
   background-size: cover;
   color: white;
   display: flex;
+  flex-direction: column;
 }
-@media screen and (min-width: 320px) {
-  .footer {
-    flex-direction: column;
-  }
+.footer__title {
+  font-size: 24px;
+  font-weight: 600;
 }
-.footer-container {
+.footer-social-icons {
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
 }
-@media screen and (min-width: 320px) {
-  .footer-container {
-    flex-direction: column;
+.footer__icons {
+  margin-right: 2rem;
+  margin-bottom: 1rem;
+}
+.footer-container__contact {
+  font-size: 13px;
+}
+@media screen and (min-width: 768px) {
+  .footer-container__contact {
+    font-size: 14px;
   }
 }
 .footer__logo {
   font-weight: 400;
+  font-size: 24px;
   margin-bottom: 0;
+}
+.footer__copyright {
+  font-size: 13px;
 }
 
 .hero {
   background-image: url(/assets/Images/hero-bio.jpg);
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100%;
+  background-position: center center;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   position: relative;
   z-index: 1;
-  width: 100%;
-  height: 100%;
-}
-@media screen and (min-width: 320px) {
-  .hero {
-    height: 33vh;
-    background-size: cover;
-  }
+  background-size: cover;
+  height: 33vh;
 }
 @media screen and (min-width: 768px) {
   .hero {
-    height: 80vh;
-    background-size: cover;
+    height: 90vh;
   }
 }
 .hero__overlay {
   background-color: #323232;
-  background-size: 100%;
+  background-size: cover;
   position: absolute;
   opacity: 0.5;
-  z-index: -1;
+  z-index: 2;
   width: 100%;
-  height: 100%;
-}
-@media screen and (min-width: 320px) {
-  .hero__overlay {
-    height: 33vh;
-  }
+  height: 33vh;
 }
 @media screen and (min-width: 768px) {
   .hero__overlay {
@@ -152,16 +146,14 @@
 .hero__title {
   margin: 0;
   color: white;
-}
-@media screen and (min-width: 320px) {
-  .hero__title {
-    font-size: 24px;
-  }
+  z-index: 3;
+  font-size: 24px;
 }
 @media screen and (min-width: 768px) {
   .hero__title {
     padding-left: 2rem;
     font-size: 60px;
+    font-weight: 600;
   }
 }
 
@@ -170,7 +162,32 @@
 }
 
 html {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   font-family: "AvenirNextLTPro";
+}
+
+.about__title {
+  font-size: 24px;
+  font-weight: 600;
+}
+.about-image {
+  width: 100%;
+  object-fit: cover;
+}
+.about__quote {
+  font-weight: 600;
+  font-size: 14px;
+}
+.about-description__title {
+  font-weight: 600;
+  font-size: 14px;
+}
+.about-description-left {
+  font-weight: 400;
+  font-size: 13px;
+}
+.about-description-right {
+  font-weight: 400;
+  font-size: 13px;
 }/*# sourceMappingURL=bio.css.map */
