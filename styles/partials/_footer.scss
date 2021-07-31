@@ -3,10 +3,13 @@
 .footer {
     background-color: #323232;
     background-size: cover;
+    width: 100%;
     color: white;
     display: flex;
     flex-direction: column;
-    
+    padding-right: 1rem;
+    padding-left: 1rem;
+
 
     @include tablet {
 
@@ -21,8 +24,7 @@
     }   
 
     &__title{
-        font-size: 24px;
-        font-weight: 600;
+        @include mobile-text-section-header;
     }
 
     &-social-icons{
@@ -38,12 +40,14 @@
     }
 
     &-container__contact{
-        font-size: 13px;
+        @include mobile-text-footer;
 
         @include tablet {
-            font-size: 14px;
+            @include desktab-footer;
         }
+    
         
+    
     }
 
         
@@ -54,7 +58,7 @@
     }
 
     &__copyright{
-        font-size: 13px;
+        @include mobile-text-footer;
     }
 }
 

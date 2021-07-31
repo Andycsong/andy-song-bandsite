@@ -2,12 +2,13 @@
 @use './partials/header' as*; 
 @use './partials/footer' as*;
 @use'./partials/hero' as*;
+@use './partials/mixins' as*;
 
 *, *::before, *::after {
     box-sizing: border-box;
 }
 
-html {
+body {
     margin: 0;
     padding: 0;
     font-family:'AvenirNextLTPro';
@@ -15,13 +16,14 @@ html {
   }
 
 .about {
-    
+    padding-left: 1rem;
+    padding-right: 1rem;
 
 
 
   &__title{
-    font-size: 24px;
-    font-weight: 600;
+    @include mobile-text-section-header;
+    margin-bottom: 16px;
 
   }
 
@@ -31,22 +33,50 @@ html {
   }
 
   &__quote{
-      font-weight: 600;
-      font-size: 14px;
+      @include mobile-text-subheader;
+      margin: 0;
+      padding-top: 16px;
   }
 
   &-description__title{
-      font-weight: 600;
-      font-size: 14px;
+      @include mobile-text-subheader;
+      margin: 0;
+      padding-top:16px;
   }
 
   &-description-left{
-      font-weight: 400;
-      font-size: 13px;
+    @include mobile-text-body;
+      margin: 0;
+      padding-top:  1rem;
   }
 
   &-description-right{
-      font-weight: 400;
-      font-size: 13px;
+      @include mobile-text-body;
+      margin: 0;
+      padding-top: 1rem;
+      padding-bottom: 0.5rem;
   }
+}
+
+.photo-gallery{
+    
+    &__title{
+        @include mobile-text-section-header;
+        padding: 1rem;
+        margin: 0;
+    }
+
+    &-container{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+
+    &__image{
+        padding: 1rem;
+        padding-top: 0;
+        width: 100%;
+    }
+
+    
 }

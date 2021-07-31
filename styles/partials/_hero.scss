@@ -10,7 +10,8 @@
     position: relative;
     z-index: 1;
     background-size:cover;
-    height: 33vh;
+    height: 33vh;  
+    
     
  
 
@@ -40,12 +41,13 @@
        margin: 0;
        color: white;
        z-index: 3;
-        font-size: 24px;
+        padding-left: 1rem;
+        padding-right: 1rem;
+         
+            
 
       @include tablet {
-          padding-left: 2rem;
-          font-size: 60px;
-          font-weight: 600;
+           
       }
     } 
     
