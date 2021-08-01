@@ -1,4 +1,5 @@
 @use 'mixins' as *;
+@use 'variables' as*;
 
 .footer {
     background-color: #323232;
@@ -9,22 +10,34 @@
     flex-direction: column;
     padding-right: 1rem;
     padding-left: 1rem;
+    position: relative;
 
 
     @include tablet {
-
+        padding-left: 2.25rem;
+        padding-right: 2.25rem;
     }
 
     @include desktop {
 
     }
     &-container{
-        
-        
+
+        @include tablet {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
     }   
 
     &__title{
         @include mobile-text-section-header;
+            margin: 0;
+            padding-top: 36px;
+            padding-bottom: 36px;
+            @include tablet {
+                @include desktab-section-header;
+            }
     }
 
     &-social-icons{
@@ -32,6 +45,10 @@
         flex-direction: row;
         align-items: center;
         justify-content: flex-start;
+
+        @include tablet {
+            padding-left: 36px;
+        }
     }
 
     &__icons{
@@ -39,26 +56,55 @@
         margin-bottom: 1rem;
     }
 
+    &-text-container{
+
+        @include tablet {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
     &-container__contact{
         @include mobile-text-footer;
+        padding-bottom: 16px;
 
         @include tablet {
             @include desktab-footer;
+            margin: 0;
+            
         }
+    }
     
-        
-    
+    &-container__color{
+        color: $silver;
     }
 
         
     &__logo{
         font-weight: 400;
         font-size: 24px;
-        margin-bottom: 0;
+        margin: 0;
+        padding-top: 24px;
+
+        @include tablet {
+            padding-top: 0px;
+            position: absolute;
+            top: 36px;
+            right: 36px;
+        }
     }
 
     &__copyright{
         @include mobile-text-footer;
+        margin: 0;
+        color: $silver;
+        padding-top: 16px;
+        padding-bottom:16px;
+        @include tablet {
+            @include desktab-footer;
+            padding-top: 36px;
+            padding-bottom: 36px;
+        }
     }
 }
 
