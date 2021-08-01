@@ -13,8 +13,6 @@
     height: 80px;
 
     @include tablet{
-        position: absolute;
-        z-index: 3;
         flex-direction: row;
         justify-content: flex-start;
         padding-left: 2.25rem;
@@ -22,6 +20,7 @@
     }
 
     @include desktop{
+        position: relative;
         flex-direction: row;
         
     }
