@@ -3,6 +3,7 @@
 @use './partials/footer' as*;
 @use'./partials/hero' as*;
 @use './partials/mixins' as*;
+@use './partials/variables' as*;
 
 *, *::before, *::after {
     box-sizing: border-box;
@@ -19,6 +20,7 @@ body {
 .about {
     padding-left: 1rem;
     padding-right: 1rem;
+    color: $bandsite-black;
 
     @include tablet {
       padding-left: 2.25rem;
@@ -53,7 +55,7 @@ body {
     }
   }
 
-  &-image{
+  &__image{
     width: 100%;
     object-position: center;
     object-fit: cover;
@@ -102,6 +104,7 @@ body {
   &__quotee{
     margin: 0;
     @include mobile-text-body;
+    font-weight: 600;
     padding-top: 1rem;
 
       @include tablet {
