@@ -358,16 +358,26 @@
   }
 }
 
-.hero {
+.hero__bio {
   background-image: url(/assets/Images/hero-bio.jpg);
   background-repeat: no-repeat;
   background-position: center;
+  background-size: cover;
+}
+
+.hero__shows {
+  background-image: url(/assets/Images/hero-shows.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.hero {
   display: inline-flex;
   justify-content: flex-start;
   align-items: center;
   position: relative;
   z-index: 1;
-  background-size: cover;
   height: 24vh;
   width: 100%;
 }
