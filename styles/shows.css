@@ -454,4 +454,8 @@ body {
     margin-right: auto;
     width: 80%;
   }
+}
+
+li {
+  list-style-type: none;
 }/*# sourceMappingURL=shows.css.map */
