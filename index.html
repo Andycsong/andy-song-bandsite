@@ -81,6 +81,31 @@
                     alt="concert gallery-9">
             </div>
         </section>
+        <section class="conversation">
+            <h3 class="conversation__title"> Join the Conversation</h3>
+            <article class="user">
+                <div class="user__input">
+                    <input type="image" form="commentsForm" class="user__avatar" src="/assets/Images/Mohan-muruge.jpg"
+                        alt="avatar image">
+
+                    <form class="user__form" id='commentsForm' action="commentsForm">
+                        <label for="formName" class="user-field__label">Name</label>
+                        <input id='fullName' class="user-field__name" name="fullName" placeholder="Enter your name"
+                            type="text" maxlength="30">
+
+                        <label for="comment" class="user-field__label">Comment</label>
+                        <textarea name="comment" id="comment" class="user-field__comments" cols="30" rows="10"
+                            maxlength="250" placeholder="Add a new comment"></textarea>
+
+                        <input type="submit" value="COMMENT" class="user__submit">
+                    </form>
+                </div>
+            </article>
+            <article class="comments">
+
+            </article>
+        </section>
+
     </main>
     <!-- FOOTER -->
     <footer class="footer">

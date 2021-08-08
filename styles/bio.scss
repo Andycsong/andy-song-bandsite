@@ -251,3 +251,163 @@
       padding-bottom: 2.25rem;
     }
 }
+
+
+
+.conversation{
+   padding-left: 1rem;
+   padding-right: 1rem;
+
+    &__title{
+      @include mobile-text-section-header;
+      margin: 0;
+      font-weight: 600;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+
+}
+
+.user{
+  
+  &__input{
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid $mercury;
+    stroke-width: 1px;
+  }
+
+
+  &__form{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+    flex-basis: 100%;
+    padding-left: 1rem;
+    
+    
+    
+  }
+
+  &-field__label{
+    padding-top: 1rem;
+    padding-bottom: 4px;
+    color: $silver;
+  }
+
+  &-field__name{
+    @include mobile-text-body;
+    min-height: 36px;
+    border-radius: 4px;
+    padding: 12px;
+    border: 1px solid $mercury;
+    background-color: $alabaster;
+    width: 100%;
+
+    &::placeholder{
+      color: $bandsite-black;
+    }
+  }
+
+  &__avatar{
+    margin-top: 39px;
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    
+  }
+
+  &-field__comments{
+    @include mobile-text-body;
+    border: 1px solid $mercury;
+    background-color: $alabaster;
+    padding: 12px;
+    border-radius: 4px;
+    width: 100%;
+
+    &::placeholder{
+      color: $bandsite-black;
+    }
+  }
+
+  &__submit{
+    margin-top: 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    border: none;
+    background-color: $bandsite-black;
+    color: white;
+    line-height: 40px;
+    min-width: 150px;
+    padding-left: 32px;
+    padding-right: 32px;
+    width: 100%;
+    font-weight: 600;
+  }
+
+}
+
+textarea{
+  font-family: inherit;
+}
+
+.comments{
+  margin: 0;
+  
+
+
+  &-container{
+    display: flex;  
+    flex-direction: column;
+  }
+
+  &__image{
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    
+    
+  }
+
+  &__for-each{
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: row;
+  }
+
+  &-data-container{
+    padding-left: 1rem;
+  }
+
+  &-container-ul{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__name {
+    @include mobile-text-body;
+    font-weight: 600;
+  }
+
+  &__timestamp{
+    @include mobile-text-body;
+    
+  }
+
+  &-description-container{
+    margin: 0;
+    padding: 0;
+    padding-bottom: 1rem;
+      border-bottom: 1px solid $mercury;
+      stroke-width: 1px;
+  }
+
+  &__description{
+    @include mobile-text-body;
+    padding-top: 1rem;
+  }
+
+}

@@ -52,59 +52,19 @@ const concertInfo = [
 ];
 
 
-// concertInfo.forEach((concert) => {
-//     console.log(concert);
-// })
-
-
-
-{/* <section class="shows">
-        <h1 class="shows__title">Shows</h1>
-        <div class=" shows-container">
-            <ul>
-                <li>
-                    <h1>Date</h1>
-                    <p> wed dec 16 2021</p>
-                 </li> 
-                <li> where the venue should be</li>
-                <li> where the location should be</li>
-            </ul>
-            <button> where the buy tickets button should be</button>
-        </div>
-        
-    </section> */}
-
-
 
 const createMain = document.querySelector('main');
 
 const showsSection = document.createElement('section');
 showsSection.classList.add("shows");
 
-const showsTitle = document.createElement('h1');
-showsTitle.classList.add('shows__title', "title");
+const showsTitle = document.createElement('h3');
+showsTitle.classList.add('shows__title');
 showsTitle.innerText = "Shows";
-
-
-const showsContainer = document.createElement('div');
-showsContainer.classList.add('shows-container');
-
-// const unorderedList = document.createElement('ul');
-
-// const showsDates = document.createElement('li');
-// showsDates.classList.add('shows__dates');
-
-
-// const showsDateInfo = document.createElement('li');
-// showsDateInfo.classList.add('shows-date__info');
 
 createMain.appendChild(showsSection);
 showsSection.appendChild(showsTitle);
-// showsSection.appendChild(showsContainer);
-// showsContainer.appendChild(unorderedList);
 
-// unorderedList.appendChild(showsDates);
-// unorderedList.appendChild(showsDateInfo);
 
 concertInfo.forEach(info => {
     console.log(info);
@@ -113,33 +73,34 @@ concertInfo.forEach(info => {
     showsContainer.classList.add('shows-container');
 
     const unorderedList = document.createElement('ul');
+    unorderedList.classList.add('shows-container-ul')
 
     const ticketButton = document.createElement('button')
     ticketButton.classList.add('shows__button');
     ticketButton.innerText = ('Buy Tickets');
 
     const showsDates = document.createElement('li');
-    showsDates.classList.add('shows__dates');
+    showsDates.classList.add('shows__dates', 'shows__subheader');
     showsDates.innerText = info.DateTitle;
 
     const showsDateInfo = document.createElement('li');
-    showsDateInfo.classList.add('shows-date__info');
+    showsDateInfo.classList.add('shows-date__info', 'shows__info');
     showsDateInfo.innerText = info.Dates;
 
     const showsVenue = document.createElement('li')
-    showsVenue.classList.add('shows__venue');
+    showsVenue.classList.add('shows__venue', 'shows__subheader');
     showsVenue.innerText = info.VenueTitle;
 
     const showsVenueInfo = document.createElement('li')
-    showsVenueInfo.classList.add('shows-venue__info');
+    showsVenueInfo.classList.add('shows-venue__info', 'shows__info');
     showsVenueInfo.innerText = info.Venue;
 
     const showsLocation = document.createElement('li');
-    showsLocation.classList.add('shows__location');
+    showsLocation.classList.add('shows__location', 'shows__subheader');
     showsLocation.innerText = info.LocationTitle;
 
     const showsLocationInfo = document.createElement('li');
-    showsLocationInfo.classList.add('shows-location__info');
+    showsLocationInfo.classList.add('shows-location__info', 'shows__info');
     showsLocationInfo.innerText = info.Location;
 
     showsSection.appendChild(showsContainer);

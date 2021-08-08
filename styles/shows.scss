@@ -7,6 +7,67 @@
 @use './partials/hero' as*;
 
 
-li {
-    list-style-type: none;
+
+
+.shows{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+
+    &__title{
+        @include mobile-text-section-header;
+        margin: 0;
+        padding-top: 1.5rem;
+        padding-bottom: 1rem;
+        font-weight: 600;
+
+        @include tablet{
+            @include desktab-section-header;
+            font-weight: 600;
+            padding-top: 3rem;
+            padding-bottom: 2.25rem;
+        }
+        
+    }
+
+    &-container{
+        border-bottom: 1px solid $mercury;
+        stroke-width: 1px;
+        padding-bottom: 1rem;
+    }
+
+    &-container-ul{
+        padding: 0;
+    }
+
+
+    &__button{
+        border-radius: 4px;
+        text-decoration: none;
+        border: none;
+        background-color: $bandsite-black;
+        color: white;
+        line-height: 40px;
+        min-width: 150px;
+        padding-left: 32px;
+        padding-right: 32px;
+        width: 100%;
+    }
+
+    &__subheader{
+        @include mobile-text-subheader;
+        color: $silver;
+        font-weight: 400;
+    }
+
+    &__info{
+        @include mobile-text-body;
+        
+
+    }
+
+    &-date__info{
+        font-weight: 600;
+    }
+
 }

@@ -1,4 +1,6 @@
-
+@use 'mixins' as*;
+@use 'variables' as*;
+@use 'fonts' as *; 
 
 *, *::before, *::after {
     box-sizing: border-box;
@@ -10,3 +12,8 @@ body {
     font-family:'AvenirNextLTPro';
     
   }
+
+li{
+    list-style-type: none;
+}
+
