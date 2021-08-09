@@ -324,6 +324,7 @@
     padding: 12px;
     border-radius: 4px;
     width: 100%;
+    resize: none;
 
     &::placeholder{
       color: $bandsite-black;
@@ -354,7 +355,9 @@ textarea{
 .comments{
   margin: 0;
   
-
+// img[src=""] {
+//   display: none;
+// }
 
   &-container{
     display: flex;  
@@ -365,11 +368,11 @@ textarea{
     height: 36px;
     width: 36px;
     border-radius: 50%;
-    
+    color: $mercury;
     
   }
 
-  &__for-each{
+  &__card{
     padding-top: 1rem;
     display: flex;
     flex-direction: row;
@@ -377,6 +380,7 @@ textarea{
 
   &-data-container{
     padding-left: 1rem;
+    flex: 1;
   }
 
   &-container-ul{

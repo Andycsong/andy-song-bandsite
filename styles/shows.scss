@@ -14,11 +14,15 @@
     padding-right: 1rem;
     padding-bottom: 1rem;
 
+        @include tablet{
+            padding-left: 2.25rem;
+            padding-right: 2.25rem
+        }
+
     &__title{
         @include mobile-text-section-header;
         margin: 0;
         padding-top: 1.5rem;
-        padding-bottom: 1rem;
         font-weight: 600;
 
         @include tablet{
@@ -31,13 +35,24 @@
     }
 
     &-container{
-        border-bottom: 1px solid $mercury;
-        stroke-width: 1px;
-        padding-bottom: 1rem;
+        
+        @include tablet{
+            display: flex;
+            align-items: center;
+            
+        }
     }
 
     &-container-ul{
         padding: 0;
+
+
+        @include tablet{
+            display: flex;
+            flex-grow: 1;
+            align-items: flex-start;
+            justify-content:space-between;
+        }
     }
 
 
@@ -48,16 +63,34 @@
         background-color: $bandsite-black;
         color: white;
         line-height: 40px;
-        min-width: 150px;
-        padding-left: 32px;
-        padding-right: 32px;
         width: 100%;
+
+        @include tablet{
+            max-height: 40px;
+            max-width: 150px;
+            padding-left: 32px;
+            padding-right: 32px;
+            flex-grow: 1;
+            
+        }
+    }
+
+    &__divider{
+        border-bottom: 1px solid $mercury;
+        stroke-width: 1px;
+        margin: 0;
+        margin-top: 1rem;
     }
 
     &__subheader{
         @include mobile-text-subheader;
         color: $silver;
         font-weight: 400;
+        padding-top: 1rem;
+
+        @include tablet{
+            display: none;
+        }
     }
 
     &__info{
@@ -70,4 +103,7 @@
         font-weight: 600;
     }
 
+    &-location__info{
+        padding-right: 4.5rem;
+    }
 }

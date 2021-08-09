@@ -67,7 +67,6 @@ showsSection.appendChild(showsTitle);
 
 
 concertInfo.forEach(info => {
-    console.log(info);
 
     const showsContainer = document.createElement('div');
     showsContainer.classList.add('shows-container');
@@ -79,6 +78,19 @@ concertInfo.forEach(info => {
     ticketButton.classList.add('shows__button');
     ticketButton.innerText = ('Buy Tickets');
 
+    ticketButton.addEventListener('click', function (event) {
+        event.preventDefault();
+        console.log("Venue Location: ", info.Venue);
+        console.log("Location: ", info.Location);
+    })
+
+
+    const cardDivider = document.createElement('hr');
+    cardDivider.classList.add('shows__divider');
+
+    const showsDateContainer = document.createElement('ul');
+    showsDateContainer.classList.add('shows__date-container');
+
     const showsDates = document.createElement('li');
     showsDates.classList.add('shows__dates', 'shows__subheader');
     showsDates.innerText = info.DateTitle;
@@ -87,6 +99,9 @@ concertInfo.forEach(info => {
     showsDateInfo.classList.add('shows-date__info', 'shows__info');
     showsDateInfo.innerText = info.Dates;
 
+    const showsVenueContainer = document.createElement('ul');
+    showsVenueContainer.classList.add('shows__venue-container');
+
     const showsVenue = document.createElement('li')
     showsVenue.classList.add('shows__venue', 'shows__subheader');
     showsVenue.innerText = info.VenueTitle;
@@ -94,6 +109,9 @@ concertInfo.forEach(info => {
     const showsVenueInfo = document.createElement('li')
     showsVenueInfo.classList.add('shows-venue__info', 'shows__info');
     showsVenueInfo.innerText = info.Venue;
+
+    const showsLocationContainer = document.createElement('ul')
+    showsLocationContainer.classList.add('shows-location__container')
 
     const showsLocation = document.createElement('li');
     showsLocation.classList.add('shows__location', 'shows__subheader');
@@ -104,13 +122,18 @@ concertInfo.forEach(info => {
     showsLocationInfo.innerText = info.Location;
 
     showsSection.appendChild(showsContainer);
+    showsSection.appendChild(cardDivider);
     showsContainer.appendChild(unorderedList);
     showsContainer.appendChild(ticketButton);
-    unorderedList.appendChild(showsDates);
-    unorderedList.appendChild(showsDateInfo);
-    unorderedList.appendChild(showsVenue);
-    unorderedList.appendChild(showsVenueInfo);
-    unorderedList.appendChild(showsLocation);
-    unorderedList.appendChild(showsLocationInfo);
+    unorderedList.appendChild(showsDateContainer);
+    showsDateContainer.appendChild(showsDates);
+    showsDateContainer.appendChild(showsDateInfo);
+    unorderedList.appendChild(showsVenueContainer);
+    showsVenueContainer.appendChild(showsVenue);
+    showsVenueContainer.appendChild(showsVenueInfo);
+    unorderedList.appendChild(showsLocationContainer);
+    showsLocationContainer.appendChild(showsLocation);
+    showsLocationContainer.appendChild(showsLocationInfo);
+
 });
 
