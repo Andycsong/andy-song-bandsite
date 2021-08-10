@@ -62,6 +62,9 @@ const showsTitle = document.createElement('h3');
 showsTitle.classList.add('shows__title');
 showsTitle.innerText = "Shows";
 
+const showsDynamicContainer = document.createElement('div');
+showsDynamicContainer.classList.add('shows__shows-container');
+
 const DeskTabHeader = document.createElement('div')
 DeskTabHeader.classList.add('shows__subheader-container');
 
@@ -77,9 +80,12 @@ const DeskTabLocation = document.createElement('h4')
 DeskTabLocation.classList.add('shows__subheader-title');
 DeskTabLocation.innerText = "LOCATION"
 
+
+
 createMain.appendChild(showsSection);
 showsSection.appendChild(showsTitle);
-showsSection.appendChild(DeskTabHeader);
+showsSection.appendChild(showsDynamicContainer)
+showsDynamicContainer.appendChild(DeskTabHeader);
 DeskTabHeader.appendChild(DeskTabDate);
 DeskTabHeader.appendChild(DeskTabVenue);
 DeskTabHeader.appendChild(DeskTabLocation);
@@ -139,8 +145,8 @@ concertInfo.forEach(info => {
     showsLocationInfo.classList.add('shows-location__info', 'shows__info');
     showsLocationInfo.innerText = info.Location;
 
-    showsSection.appendChild(showsContainer);
-    showsSection.appendChild(cardDivider);
+    showsDynamicContainer.appendChild(showsContainer);
+    showsDynamicContainer.appendChild(cardDivider);
     showsContainer.appendChild(unorderedList);
     showsContainer.appendChild(ticketButton);
     unorderedList.appendChild(showsDateContainer);
