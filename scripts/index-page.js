@@ -25,8 +25,6 @@ const createComments = document.querySelector('.comments');
 const commentsContainer = document.createElement('div');
 commentsContainer.classList.add('comments-container');
 
-
-
 createComments.appendChild(commentsContainer);
 
 function displayComment() {
@@ -41,7 +39,6 @@ function displayComment() {
 
         const createAvatar = document.createElement('div')
         createAvatar.classList.add('comments__image')
-
 
         const unorderedList = document.createElement('ul');
         unorderedList.classList.add('comments-container-ul')
@@ -77,8 +74,6 @@ function displayComment() {
     })
 }
 
-
-
 const commentsForm = document.querySelector('#commentsForm')
 
 commentsForm.addEventListener('submit', function (event) {
@@ -107,9 +102,6 @@ commentsForm.addEventListener('submit', function (event) {
     event.target.reset();
 
 
-
 });
 displayComment()
 
-// use inside event listener 
-//variable.classlist.remove()

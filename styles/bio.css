@@ -865,6 +865,20 @@ ul {
   padding-left: 1rem;
   padding-right: 1rem;
 }
+@media screen and (min-width: 768px) {
+  .conversation {
+    padding-left: 2.25rem;
+    padding-right: 2.25rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .conversation {
+    padding: 0;
+    margin-right: auto;
+    margin-left: auto;
+    width: 80%;
+  }
+}
 .conversation__title {
   font-size: 24px;
   line-height: 32px;
@@ -874,12 +888,40 @@ ul {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
+@media screen and (min-width: 768px) {
+  .conversation__title {
+    font-size: 36px;
+    line-height: 44px;
+    font-weight: 700;
+    font-weight: 600;
+  }
+}
 
+@media screen and (min-width: 768px) {
+  .user {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .user {
+    margin-right: auto;
+    margin-left: auto;
+    width: 80%;
+  }
+}
 .user__input {
   display: flex;
   flex-direction: row;
   border-bottom: 1px solid #e1e1e1;
   stroke-width: 1px;
+}
+@media screen and (min-width: 1280px) {
+  .user__input {
+    margin-right: auto;
+    margin-left: auto;
+    width: 70%;
+  }
 }
 .user__form {
   display: flex;
@@ -917,6 +959,12 @@ ul {
   width: 36px;
   border-radius: 50%;
 }
+@media screen and (min-width: 768px) {
+  .user__avatar {
+    height: 48px;
+    width: 48px;
+  }
+}
 .user-field__comments {
   font-size: 13px;
   line-height: 18px;
@@ -943,11 +991,18 @@ ul {
   background-color: #323232;
   color: white;
   line-height: 40px;
-  min-width: 150px;
-  padding-left: 32px;
-  padding-right: 32px;
   width: 100%;
   font-weight: 600;
+}
+@media screen and (min-width: 768px) {
+  .user__submit {
+    min-width: 150px;
+    max-width: 150px;
+    width: auto;
+    padding-left: 32px;
+    padding-right: 32px;
+    align-self: flex-end;
+  }
 }
 
 textarea {
@@ -955,11 +1010,33 @@ textarea {
 }
 
 .comments {
+  padding-bottom: 1rem;
   margin: 0;
+}
+@media screen and (min-width: 768px) {
+  .comments {
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-bottom: 2.25rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .comments {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+  }
 }
 .comments-container {
   display: flex;
   flex-direction: column;
+}
+@media screen and (min-width: 1280px) {
+  .comments-container {
+    margin-right: auto;
+    margin-left: auto;
+    width: 70%;
+  }
 }
 .comments__image {
   height: 36px;
@@ -967,10 +1044,21 @@ textarea {
   border-radius: 50%;
   background-color: #e1e1e1;
 }
+@media screen and (min-width: 768px) {
+  .comments__image {
+    height: 48px;
+    width: 48px;
+  }
+}
 .comments__card {
   padding-top: 1rem;
   display: flex;
   flex-direction: row;
+}
+@media screen and (min-width: 768px) {
+  .comments__card {
+    padding-top: 2.25rem;
+  }
 }
 .comments-data-container {
   padding-left: 1rem;
@@ -989,10 +1077,25 @@ textarea {
   font-weight: 400;
   font-weight: 600;
 }
+@media screen and (min-width: 768px) {
+  .comments__name {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+    font-weight: 600;
+  }
+}
 .comments__timestamp {
   font-size: 13px;
   line-height: 18px;
   font-weight: 400;
+}
+@media screen and (min-width: 768px) {
+  .comments__timestamp {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+  }
 }
 .comments-description-container {
   margin: 0;
@@ -1006,4 +1109,11 @@ textarea {
   line-height: 18px;
   font-weight: 400;
   padding-top: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .comments__description {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+  }
 }/*# sourceMappingURL=bio.css.map */

@@ -91,15 +91,14 @@
                     <form class="user__form" id='commentsForm' action="commentsForm">
                         <label for="formName" class="user-field__label">Name</label>
                         <input id='fullName' form="commentsForm" class="user-field__name" name="fullName"
-                            placeholder="Enter your name" type="text" maxlength="30" required>
+                            placeholder="Enter your name" min="1" type="text" maxlength="30" required>
 
                         <label for="comment" class="user-field__label">Comment</label>
                         <textarea name="comment_input" form="commentsForm" id="comment" class="user-field__comments"
-                            cols="30" rows="10" maxlength="250" placeholder="Add a new comment" required></textarea>
+                            cols="30" rows="5" minlength="1" maxlength="250" placeholder="Add a new comment"
+                            required></textarea>
 
-                        <button type="submit" form="commentsForm" name="button" class="user__submit">SUBMIT</button>
-
-                        <!-- <input type="submit" value="COMMENT" class="user__submit"> -->
+                        <button type="submit" form="commentsForm" name="button" class="user__submit">COMMENT</button>
                     </form>
                 </div>
             </article>
