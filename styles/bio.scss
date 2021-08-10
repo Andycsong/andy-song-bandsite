@@ -307,6 +307,11 @@
     &::placeholder{
       color: $bandsite-black;
     }
+
+    &:focus{
+      outline: none;
+      border: 1px solid $bandsite-black;
+    }
   }
 
   &__avatar{
@@ -328,6 +333,11 @@
 
     &::placeholder{
       color: $bandsite-black;
+    }
+
+    &:focus{
+      outline: none;
+      border: 1px solid $bandsite-black;
     }
   }
 
@@ -355,9 +365,6 @@ textarea{
 .comments{
   margin: 0;
   
-// img[src=""] {
-//   display: none;
-// }
 
   &-container{
     display: flex;  
@@ -368,7 +375,7 @@ textarea{
     height: 36px;
     width: 36px;
     border-radius: 50%;
-    color: $mercury;
+    background-color: $mercury;
     
   }
 

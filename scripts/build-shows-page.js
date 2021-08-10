@@ -62,9 +62,27 @@ const showsTitle = document.createElement('h3');
 showsTitle.classList.add('shows__title');
 showsTitle.innerText = "Shows";
 
+const DeskTabHeader = document.createElement('div')
+DeskTabHeader.classList.add('shows__subheader-container');
+
+const DeskTabDate = document.createElement('h4')
+DeskTabDate.classList.add('shows__subheader-title');
+DeskTabDate.innerText = "DATES"
+
+const DeskTabVenue = document.createElement('h4')
+DeskTabVenue.classList.add('shows__subheader-title', 'shows__subheader-venue');
+DeskTabVenue.innerText = "VENUE"
+
+const DeskTabLocation = document.createElement('h4')
+DeskTabLocation.classList.add('shows__subheader-title');
+DeskTabLocation.innerText = "LOCATION"
+
 createMain.appendChild(showsSection);
 showsSection.appendChild(showsTitle);
-
+showsSection.appendChild(DeskTabHeader);
+DeskTabHeader.appendChild(DeskTabDate);
+DeskTabHeader.appendChild(DeskTabVenue);
+DeskTabHeader.appendChild(DeskTabLocation);
 
 concertInfo.forEach(info => {
 
@@ -76,7 +94,7 @@ concertInfo.forEach(info => {
 
     const ticketButton = document.createElement('button')
     ticketButton.classList.add('shows__button');
-    ticketButton.innerText = ('Buy Tickets');
+    ticketButton.innerText = ('BUY TICKETS');
 
     ticketButton.addEventListener('click', function (event) {
         event.preventDefault();

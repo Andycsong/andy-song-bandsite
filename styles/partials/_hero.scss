@@ -27,13 +27,26 @@
     width: 100%;  
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
 
         @include tablet {
-            height: 65vh;
-            background-position: center,
+        height: 70vh;
+        background-position: center,
         }
 
-    &-title{
+        @include desktop {
+            justify-content: center;
+            background-position: top 30% center ;
+        height: 85vh;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        }
+    
+
+
+    &-subtitle{
         @include mobile-text-subheader;
         padding-top: 1rem;
         padding-bottom: 1rem;
@@ -49,14 +62,65 @@
             padding-left: 2.25rem;
             padding-right: 2.25rem;
         }
+
+        @include desktop{
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+        padding-left: 0;
+        padding-right: 0;
+        }
     }
 
+    &-title{
+        margin: 0;
+       color: white;
+       z-index: 3;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        
+         
+      @include tablet {
+        @include desktab-page-header;
+        font-weight: 600;
+        padding-left: 2.25rem;
+        padding-right: 2.25rem;
+      }
+
+      @include desktop{
+        padding-bottom: 3rem;
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+        
+      }
+    } 
+    
 
     &-music{
         z-index: 4;
         padding-left: 1rem;
         padding-right: 1rem;
         height: 120px;
+
+        @include tablet{
+            padding-left: 2.25rem;
+            padding-right: 2.25rem;
+            height: 10rem;
+            width: 60%;
+        }
+
+        @include desktop{
+        margin-left: auto;
+        margin-right: auto;
+        width: 33%;
+        padding: 0;
+        position: absolute;
+        top: 15rem;
+        right: 7rem;
+        }
     }   
 }
 
@@ -90,12 +154,6 @@
         width: 100%;
          height: 100%;
             
-        @include tablet {
-            height: 56vh;
-        }
-        @include desktop{
-            height: 75vh;
-        }
     }
 
    &__title{

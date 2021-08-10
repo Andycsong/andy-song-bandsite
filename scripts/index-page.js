@@ -39,9 +39,8 @@ function displayComment() {
         const createContainer = document.createElement('div');
         createContainer.classList.add('comments__card')
 
-        const createAvatar = document.createElement('img')
+        const createAvatar = document.createElement('div')
         createAvatar.classList.add('comments__image')
-        createAvatar.setAttribute('src', '')
 
 
         const unorderedList = document.createElement('ul');
@@ -105,10 +104,7 @@ commentsForm.addEventListener('submit', function (event) {
     commentsContainer.innerHTML = '';
     displayComment(commentData);
 
-    function clearForm() {
-        document.querySelector("commentsForm").requestFullscreen();
-    }
-
+    event.target.reset();
 
 
 

@@ -16,7 +16,8 @@
 
         @include tablet{
             padding-left: 2.25rem;
-            padding-right: 2.25rem
+            padding-right: 2.25rem;
+            padding-bottom: 2.25rem;
         }
 
     &__title{
@@ -32,6 +33,31 @@
             padding-bottom: 2.25rem;
         }
         
+    }
+
+    &__subheader-container{
+        display: flex;
+        justify-content: space-between;
+        margin-right: auto;
+        width: 78.5%;
+        padding-right: 7rem;
+        
+        
+    }
+
+    &__subheader-title{
+        display: none;
+        
+        @include tablet{
+            @include desktab-body;
+            display: block;
+            color: $silver;
+            
+        }
+    }
+
+    &__subheader-venue{
+        padding-left: 3rem;
     }
 
     &-container{
@@ -51,7 +77,9 @@
             display: flex;
             flex-grow: 1;
             align-items: flex-start;
-            justify-content:space-between;
+            justify-content: space-between;
+            
+          
         }
     }
 
@@ -66,11 +94,14 @@
         width: 100%;
 
         @include tablet{
+            width: auto;
             max-height: 40px;
+            min-width: 150px;
             max-width: 150px;
-            padding-left: 32px;
-            padding-right: 32px;
+            // padding-left: 32px;
+            // padding-right: 32px;
             flex-grow: 1;
+            font-weight: 600;
             
         }
     }
@@ -95,7 +126,14 @@
 
     &__info{
         @include mobile-text-body;
-        
+
+        @include tablet{
+            @include desktab-body;
+        }
+
+    &-venue__info{
+        text-align: left;
+    }
 
     }
 
