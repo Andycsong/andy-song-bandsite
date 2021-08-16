@@ -65,6 +65,10 @@
     padding-top: 0;
   }
 }
+.header__title-anchor {
+  margin: 0;
+  padding: 0;
+}
 .header-list-container {
   display: flex;
   padding-inline-start: 0px;
@@ -1089,12 +1093,14 @@ textarea {
   font-size: 13px;
   line-height: 18px;
   font-weight: 400;
+  color: #AFAFAF;
 }
 @media screen and (min-width: 768px) {
   .comments__timestamp {
     font-size: 14px;
     line-height: 22px;
     font-weight: 400;
+    color: #AFAFAF;
   }
 }
 .comments-description-container {

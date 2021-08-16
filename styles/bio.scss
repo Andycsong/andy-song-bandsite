@@ -489,9 +489,11 @@ textarea{
 
   &__timestamp{
     @include mobile-text-body;
+    color: $silver;
 
     @include tablet{
       @include desktab-body;
+      color: $silver;
     }
     
   }

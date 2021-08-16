@@ -1,92 +1,6 @@
-// const commentData = [
-//     {
-
-//         name: 'Connor Walton',
-//         timestamp: '02/17/2021',
-//         comment: 'This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.',
-//     },
-//     {
-
-//         name: 'Emilie Beach',
-//         timestamp: '01/09/2021',
-//         comment: 'I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.'
-//     },
-//     {
-
-//         name: 'Miles Acosta',
-//         timestamp: '12/20/2020',
-//         comment: "I can't stop listening. Everytime I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Cant get enough"
-//     }
-// ];
-
-
 
 const API_URL = 'https://project-1-api.herokuapp.com/';
 const API_Key = 'f31d3b09-8f0f-407c-8b40-db9594b605d5';
-
-
-
-// const renderComments = newAPIComments => {
-//     commentsContainer.innerHTML = '';
-
-//     function displayComment()
-// }
-
-
-const myCommentsSection = axios
-    .get(`${API_URL}comments?api_key=${API_Key}`)
-    .then(response => {
-        console.log(response);
-        const newAPIComments = response.data;
-
-        // console.log(newAPIComments)
-        newAPIComments.forEach(info => {
-            console.log(info);
-
-
-            const createContainer = document.createElement('div');
-            createContainer.classList.add('comments__card')
-
-            const createAvatar = document.createElement('div')
-            createAvatar.classList.add('comments__image')
-
-            const unorderedList = document.createElement('ul');
-            unorderedList.classList.add('comments-container-ul')
-
-            const commentDataContainer = document.createElement('div')
-            commentDataContainer.classList.add('comments-data-container');
-
-            const commentsName = document.createElement('li');
-            commentsName.classList.add('comments__name');
-            commentsName.innerText = info.name;
-
-            const commentsTimeStamp = document.createElement('li')
-            commentsTimeStamp.classList.add('comments__timestamp')
-            commentsTimeStamp.innerText = info.timestamp;
-
-            const commentsDescriptionContainer = document.createElement('ul');
-            commentsDescriptionContainer.classList.add('comments-description-container')
-
-            const commentsDescription = document.createElement('li');
-            commentsDescription.classList.add('comments__description')
-            commentsDescription.innerText = info.comment;
-
-
-            createContainer.appendChild(createAvatar);
-            commentsContainer.appendChild(createContainer);
-            createContainer.appendChild(commentDataContainer);
-            commentDataContainer.appendChild(unorderedList);
-            unorderedList.appendChild(commentsName);
-            unorderedList.appendChild(commentsTimeStamp);
-            commentDataContainer.appendChild(commentsDescriptionContainer);
-            commentsDescriptionContainer.appendChild(commentsDescription);
-
-        })
-    });
-
-
-
-
 
 const createComments = document.querySelector('.comments');
 
@@ -94,36 +8,85 @@ const commentsContainer = document.createElement('div');
 commentsContainer.classList.add('comments-container');
 
 createComments.appendChild(commentsContainer);
-
-
 const commentsForm = document.querySelector('#commentsForm')
+
+function myCommentsSection() {
+    axios
+        .get(`${API_URL}comments?api_key=${API_Key}`)
+        .then(response => {
+            const newAPIComments = response.data.reverse();
+            console.log(newAPIComments);
+            newAPIComments.forEach(info => {
+                const createContainer = document.createElement('div');
+                createContainer.classList.add('comments__card')
+
+                const createAvatar = document.createElement('div')
+                createAvatar.classList.add('comments__image')
+
+                const unorderedList = document.createElement('ul');
+                unorderedList.classList.add('comments-container-ul')
+
+                const commentDataContainer = document.createElement('div')
+                commentDataContainer.classList.add('comments-data-container');
+
+                const commentsName = document.createElement('li');
+                commentsName.classList.add('comments__name');
+                commentsName.innerText = info.name;
+
+                const commentsTimeStamp = document.createElement('li')
+                commentsTimeStamp.classList.add('comments__timestamp')
+                commentsTimeStamp.innerText = DateFormatter(info.timestamp);
+
+                const commentsDescriptionContainer = document.createElement('ul');
+                commentsDescriptionContainer.classList.add('comments-description-container')
+
+                const commentsDescription = document.createElement('li');
+                commentsDescription.classList.add('comments__description')
+                commentsDescription.innerText = info.comment;
+
+
+                createContainer.appendChild(createAvatar);
+                commentsContainer.appendChild(createContainer);
+                createContainer.appendChild(commentDataContainer);
+                commentDataContainer.appendChild(unorderedList);
+                unorderedList.appendChild(commentsName);
+                unorderedList.appendChild(commentsTimeStamp);
+                commentDataContainer.appendChild(commentsDescriptionContainer);
+                commentsDescriptionContainer.appendChild(commentsDescription);
+            })
+        })
+}
+
+
+const saveMe = (formDataSaved) => {
+    axios.post(`${API_URL}comments?api_key=${API_Key}`, {
+        name: formDataSaved.name,
+        comment: formDataSaved.comment
+    })
+        .then(res => myCommentsSection(res))
+}
+
+
+function DateFormatter(sexyTime) {
+    const formatter = new Intl.DateTimeFormat('en-US', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+    });
+    const dateFormat = new Date(sexyTime);
+    return formatter.format(dateFormat)
+}
 
 commentsForm.addEventListener('submit', function (event) {
     event.preventDefault();
-
-    const dateFormat = new Date();
-    let dateFormatString;
-
-
-    dateFormat.setDate(dateFormat.getDate());
-
-    dateFormatString = ('0' + dateFormat.getDate()).slice(-2) + '/'
-        + ('0' + (dateFormat.getMonth() + 1)).slice(-2) + '/'
-        + dateFormat.getFullYear();
-
     let newComment = {
         name: event.target.fullName.value,
-        timestamp: dateFormatString,
+        timestamp: DateFormatter(event.target.timestamp),
         comment: event.target.comment.value,
     };
-
-    newAPIComments.unshift(newComment);
+    saveMe(newComment)
     commentsContainer.innerHTML = '';
-    displayComment(newAPIComments);
-
     event.target.reset();
-
-
 });
-// displayComment();
+myCommentsSection()
 

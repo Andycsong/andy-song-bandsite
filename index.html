@@ -14,7 +14,9 @@
     <!-- HEADER -->
     <header class="header">
         <div class="header__flex">
-            <img src="/assets/Logo/Logo-bandsite.svg" class="header__title" alt="Bandsite logo">
+            <a class="header__title-anchor" href="/index.html">
+                <img src="/assets/Logo/Logo-bandsite.svg" class="header__title" alt="Bandsite logo">
+            </a>
             <div class="header-list-container">
                 <a href="/index.html" class="header__list header__bio header__bio-active">Biography</a>
                 <a href="/pages/shows.html" class="header__list header__shows">Shows</a>
@@ -66,7 +68,7 @@
         <!-- PHOTO GALLERY -->
         <section class="photo-gallery">
             <h3 class="photo-gallery__title">Photo Gallery</h3>
-            <div class="photo-gallery-container">
+            <div class="photo-gallery-container">0
                 <img src="/assets/Images/Photo-gallery-1.jpg" class="photo-gallery__image" alt=" concert gallery-1">
                 <img src="/assets/Images/Photo-gallery-2.jpg" class="photo-gallery__image" alt="concert gallery-2">
                 <img src="/assets/Images/Photo-gallery-3.jpg" class="photo-gallery__image" alt="concert gallery-3">
@@ -88,7 +90,7 @@
                     <input type="image" form="commentsForm" class="user__avatar" src="/assets/Images/Mohan-muruge.jpg"
                         alt="avatar image">
 
-                    <form class="user__form" id='commentsForm' action="commentsForm">
+                    <form class="user__form" id='commentsForm' action="commentsForm" enctype="multipart/form-data">
                         <label for="formName" class="user-field__label">Name</label>
                         <input id='fullName' form="commentsForm" class="user-field__name" name="fullName"
                             placeholder="Enter your name" min="1" type="text" maxlength="30" required>
