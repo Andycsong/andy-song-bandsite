@@ -10,12 +10,12 @@ commentsContainer.classList.add('comments-container');
 createComments.appendChild(commentsContainer);
 const commentsForm = document.querySelector('#commentsForm')
 
-function myCommentsSection() {
+function displayComment() {
     axios
         .get(`${API_URL}comments?api_key=${API_Key}`)
         .then(response => {
-            const newAPIComments = response.data.reverse();
-            console.log(newAPIComments);
+            const newAPIComments = response.data.sort((initial, newNew) => newNew.timestamp - initial.timestamp);
+            // console.log(newAPIComments);
             newAPIComments.forEach(info => {
                 const createContainer = document.createElement('div');
                 createContainer.classList.add('comments__card')
@@ -57,13 +57,12 @@ function myCommentsSection() {
         })
 }
 
-
 const saveMe = (formDataSaved) => {
     axios.post(`${API_URL}comments?api_key=${API_Key}`, {
         name: formDataSaved.name,
         comment: formDataSaved.comment
     })
-        .then(res => myCommentsSection(res))
+        .then(res => displayComment(res))
 }
 
 
@@ -81,12 +80,13 @@ commentsForm.addEventListener('submit', function (event) {
     event.preventDefault();
     let newComment = {
         name: event.target.fullName.value,
-        timestamp: DateFormatter(event.target.timestamp),
+        timestamp: event.target.timestamp,
         comment: event.target.comment.value,
     };
+
     saveMe(newComment)
     commentsContainer.innerHTML = '';
     event.target.reset();
 });
-myCommentsSection()
+displayComment()
 
