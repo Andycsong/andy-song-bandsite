@@ -27,7 +27,6 @@ function myShowsSection() {
                     console.log("Location: ", info.location);
                 })
 
-
                 const cardDivider = document.createElement('hr');
                 cardDivider.classList.add('shows__divider');
 
@@ -82,7 +81,6 @@ function myShowsSection() {
         })
 }
 
-
 function DateFormatter(sexyTime) {
     const formatter = new Intl.DateTimeFormat('default', {
         weekday: 'short',
@@ -122,8 +120,6 @@ const DeskTabLocation = document.createElement('h4')
 DeskTabLocation.classList.add('shows__subheader-title');
 DeskTabLocation.innerText = "LOCATION"
 
-
-
 createMain.appendChild(showsSection);
 showsSection.appendChild(showsTitle);
 showsSection.appendChild(showsDynamicContainer)
@@ -131,8 +127,5 @@ showsDynamicContainer.appendChild(DeskTabHeader);
 DeskTabHeader.appendChild(DeskTabDate);
 DeskTabHeader.appendChild(DeskTabVenue);
 DeskTabHeader.appendChild(DeskTabLocation);
-
-
-
 
 myShowsSection();
